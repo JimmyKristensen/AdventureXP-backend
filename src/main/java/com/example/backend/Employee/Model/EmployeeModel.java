@@ -11,7 +11,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 /**
- * Timmie
+ * Timmie & Samuel
  */
 
 @Getter

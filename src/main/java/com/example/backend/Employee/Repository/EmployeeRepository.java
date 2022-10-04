@@ -4,7 +4,7 @@ import com.example.backend.Employee.Model.EmployeeModel;
 import org.springframework.data.repository.CrudRepository;
 
 /**
- * Timmie
+ * Timmie & Samuel
  */
 
 public interface EmployeeRepository extends CrudRepository<EmployeeModel,Long> {
