@@ -39,6 +39,8 @@ public class Activity {
     @Column(name="Price")
     private Integer price;
 
+    //Relation til Reservation
+
     public Activity(Integer activityId, String type, String duration, String picture, String minLength, String minAge, Integer maxPers, Integer price) {
         this.activityId = activityId;
         this.type = type;
