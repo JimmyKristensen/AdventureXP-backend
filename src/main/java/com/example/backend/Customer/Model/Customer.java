@@ -7,11 +7,10 @@ import lombok.Setter;
 import javax.persistence.*;
 
 //Nicolas
-
-@NoArgsConstructor
-@Entity
 @Getter
 @Setter
+@NoArgsConstructor
+@Entity
 @Table(name="Customers")
 public class Customer {
     @Id
@@ -27,12 +26,12 @@ public class Customer {
     @Column(name="Email")
     private String email;
 
-    public Customer(Integer customerId, String name, Integer tlf, String email) {
-        this.customerId = customerId;
+    public Customer(String name, Integer tlf, String email) {
         this.name = name;
         this.tlf = tlf;
         this.email = email;
     }
+
 
     @Override
     public String toString() {

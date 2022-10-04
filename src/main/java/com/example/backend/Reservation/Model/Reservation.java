@@ -6,11 +6,10 @@ import lombok.Setter;
 import javax.persistence.*;
 
 //Nicolas
-
-@Entity
 @Getter
 @Setter
 @NoArgsConstructor
+@Entity
 @Table(name="Reservations")
 public class Reservation {
     @Id
