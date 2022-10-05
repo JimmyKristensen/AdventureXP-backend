@@ -11,73 +11,72 @@ import javax.persistence.*;
 @Setter
 @NoArgsConstructor
 @Entity
-@Table(name = "Activities")
+@Table(name="Activities")
 public class Activity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer activityId;
 
     @Column(name="Type")
-    private String type;
+    private String typeOfActivity;
 
     @Column(name="Duration")
-    private Integer duration;
+    private Integer durationOfActivity;
 
     @Column(name="Maintenance")
-    private Integer maintenance;
+    private Integer maintenanceOfActivity;
 
-    @Column(name="Max Amount Of People")
+    @Column(name="Max_Amount_Of_People")
     private Integer maxAmountOfPeople;
 
     @Column(name="Description")
-    private String description;
+    private String descriptionOfActivity;
 
     @Column(name="Picture")
-    private String picture; //Path or URL.
+    private String pictureOfActivity; //Path or URL.
 
     @Column(name="Price")
-    private Integer price;
+    private Integer priceOfActivity;
 
-    @Column(name="Min age")
+    @Column(name="Min_age")
     private String minAge;
 
-    @Column(name="Min Height")
+    @Column(name="Min_Height")
     private String minHeight;
 
     @Column(name="Restrictions")
-    private String restrictions;
+    private String restrictionsOfActivity;
 
     //Relation til Reservation
 
 
-    public Activity(Integer activityId, String type, Integer duration, Integer maintenance, Integer maxAmountOfPeople, String description, String picture, Integer price, String minAge, String minHeight, String restrictions) {
-        this.activityId = activityId;
-        this.type = type;
-        this.duration = duration;
-        this.maintenance = maintenance;
+    public Activity(String typeOfActivity, Integer durationOfActivity, Integer maintenanceOfActivity, Integer maxAmountOfPeople, String descriptionOfActivity, String pictureOfActivity, Integer priceOfActivity, String minAge, String minHeight, String restrictionsOfActivity) {
+        this.typeOfActivity = typeOfActivity;
+        this.durationOfActivity = durationOfActivity;
+        this.maintenanceOfActivity = maintenanceOfActivity;
         this.maxAmountOfPeople = maxAmountOfPeople;
-        this.description = description;
-        this.picture = picture;
-        this.price = price;
+        this.descriptionOfActivity = descriptionOfActivity;
+        this.pictureOfActivity = pictureOfActivity;
+        this.priceOfActivity = priceOfActivity;
         this.minAge = minAge;
         this.minHeight = minHeight;
-        this.restrictions = restrictions;
+        this.restrictionsOfActivity = restrictionsOfActivity;
     }
 
     @Override
     public String toString() {
         return "Activity{" +
                 "activityId=" + activityId +
-                ", type='" + type + '\'' +
-                ", duration=" + duration +
-                ", maintenance=" + maintenance +
+                ", typeOfActivity='" + typeOfActivity + '\'' +
+                ", durationOfActivity=" + durationOfActivity +
+                ", maintenanceOfActivity=" + maintenanceOfActivity +
                 ", maxAmountOfPeople=" + maxAmountOfPeople +
-                ", description='" + description + '\'' +
-                ", picture='" + picture + '\'' +
-                ", price=" + price +
+                ", descriptionOfActivity='" + descriptionOfActivity + '\'' +
+                ", pictureOfActivity='" + pictureOfActivity + '\'' +
+                ", priceOfActivity=" + priceOfActivity +
                 ", minAge='" + minAge + '\'' +
                 ", minHeight='" + minHeight + '\'' +
-                ", restrictions='" + restrictions + '\'' +
+                ", restrictionsOfActivity='" + restrictionsOfActivity + '\'' +
                 '}';
     }
 }

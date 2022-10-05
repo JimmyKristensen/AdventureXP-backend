@@ -16,17 +16,16 @@ public class Reservation {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer reservationId;
 
-    @Column(name="Customer Id")
+    @Column(name="Customer_Id")
     private Integer customerId;
 
-    @Column(name="TimeTableSlot ID")
+    @Column(name="TimeTableSlot_ID")
     private Integer timeTableSlotID;
 
-    @Column(name="Amount Of People")
+    @Column(name="Amount_Of_People")
     private Integer amountOfPeople;
 
-    public Reservation(Integer reservationId, Integer customerId, Integer timeTableSlotID, Integer amountOfPeople) {
-        this.reservationId = reservationId;
+    public Reservation(Integer customerId, Integer timeTableSlotID, Integer amountOfPeople) {
         this.customerId = customerId;
         this.timeTableSlotID = timeTableSlotID;
         this.amountOfPeople = amountOfPeople;
