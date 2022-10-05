@@ -6,6 +6,8 @@ import com.example.backend.Customer.Model.Customer;
 import com.example.backend.Customer.Repository.CustomerRepository;
 import com.example.backend.Reservation.Model.Reservation;
 import com.example.backend.Reservation.Repository.ReservationRepository;
+import com.example.backend.TimeTableSlot.Model.TimeTableSlot;
+import com.example.backend.TimeTableSlot.Repository.TimeTableSlotRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -24,7 +26,8 @@ public class BackendApplication {
     @Bean
     public CommandLineRunner importData(CustomerRepository customerRepository,
                                         ActivityRepository activityRepository,
-                                        ReservationRepository reservationRepository
+                                        ReservationRepository reservationRepository,
+                                        TimeTableSlotRepository timeTableSlotRepository
 
     ){
         return (args) ->{
@@ -40,6 +43,10 @@ public class BackendApplication {
             final List<Reservation> reservations = new ArrayList<>();
             reservations.add(new Reservation(1,1,6));
             reservationRepository.saveAll(reservations);
+
+            final List<TimeTableSlot> timeTableSlots = new ArrayList<>();
+            timeTableSlots.add(new TimeTableSlot("05/10/2022","9:30",1));
+            timeTableSlotRepository.saveAll(timeTableSlots);
         };
     }
 }
