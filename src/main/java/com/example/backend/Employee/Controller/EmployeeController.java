@@ -7,7 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;
-import javax.validation.Valid;
+
 
 /**
  * Timmie & Samuel
@@ -33,12 +33,12 @@ public class EmployeeController {
         return ResponseEntity.ok().body(item.get());
     }
     @PostMapping
-    public ResponseEntity<Employee> create(@Valid @RequestBody Employee employee){
+    public ResponseEntity<Employee> create(@RequestBody Employee employee){
         Employee item = service.create(employee);
         return ResponseEntity.ok().body(item);
     }
     @PatchMapping("/{id}")
-    public ResponseEntity<Employee> patch(@PathVariable("id") Long id, @Valid @RequestBody Employee employee){
+    public ResponseEntity<Employee> patch(@PathVariable("id") Long id, @RequestBody Employee employee){
         return ResponseEntity.ok().body(service.update(id,employee));
     }
     @DeleteMapping("/{id}")
