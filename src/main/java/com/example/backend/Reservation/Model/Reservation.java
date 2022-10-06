@@ -14,18 +14,18 @@ import javax.persistence.*;
 public class Reservation {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer reservationId;
+    private long reservationId;
 
     @Column(name="Customer_Id")
-    private Integer customerId;
+    private long customerId;
 
     @Column(name="TimeTableSlot_ID")
-    private Integer timeTableSlotID;
+    private long timeTableSlotID;
 
     @Column(name="Amount_Of_People")
-    private Integer amountOfPeople;
+    private long amountOfPeople;
 
-    public Reservation(Integer customerId, Integer timeTableSlotID, Integer amountOfPeople) {
+    public Reservation(long customerId, long timeTableSlotID, long amountOfPeople) {
         this.customerId = customerId;
         this.timeTableSlotID = timeTableSlotID;
         this.amountOfPeople = amountOfPeople;

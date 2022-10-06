@@ -13,7 +13,7 @@ import javax.persistence.*;
 public class TimeTableSlot{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer timeTableSlotId;
+    private long timeTableSlotId;
 
     @Column(name="Date")
     private String dateOfTimeTableSlot;
@@ -25,9 +25,9 @@ public class TimeTableSlot{
     private Boolean isReserved = false;
 
     @Column(name="Activity_ID")
-    private Integer activityId;
+    private long activityId;
 
-    public TimeTableSlot(String dateOfTimeTableSlot, String timeOfTimeTableSlot, Integer activityId) {
+    public TimeTableSlot(String dateOfTimeTableSlot, String timeOfTimeTableSlot, long activityId) {
         this.dateOfTimeTableSlot = dateOfTimeTableSlot;
         this.timeOfTimeTableSlot = timeOfTimeTableSlot;
         this.activityId = activityId;

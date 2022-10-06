@@ -15,18 +15,18 @@ import javax.persistence.*;
 public class Customer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer customerId;
+    private long customerId;
 
     @Column(name="Name")
     private String name;
 
     @Column(name="tlf")
-    private Integer tlf;
+    private long tlf;
 
     @Column(name="Email")
     private String email;
 
-    public Customer(String name, Integer tlf, String email) {
+    public Customer(String name, long tlf, String email) {
         this.name = name;
         this.tlf = tlf;
         this.email = email;

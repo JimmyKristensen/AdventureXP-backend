@@ -15,19 +15,19 @@ import javax.persistence.*;
 public class Activity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer activityId;
+    private long activityId;
 
     @Column(name="Type")
     private String typeOfActivity;
 
     @Column(name="Duration")
-    private Integer durationOfActivity;
+    private long durationOfActivity;
 
     @Column(name="Maintenance")
-    private Integer maintenanceOfActivity;
+    private long maintenanceOfActivity;
 
     @Column(name="Max_Amount_Of_People")
-    private Integer maxAmountOfPeople;
+    private long maxAmountOfPeople;
 
     @Column(name="Description")
     private String descriptionOfActivity;
@@ -36,7 +36,7 @@ public class Activity {
     private String pictureOfActivity; //Path or URL.
 
     @Column(name="Price")
-    private Integer priceOfActivity;
+    private long priceOfActivity;
 
     @Column(name="Min_age")
     private String minAge;
@@ -50,7 +50,7 @@ public class Activity {
     //Relation til Reservation
 
 
-    public Activity(String typeOfActivity, Integer durationOfActivity, Integer maintenanceOfActivity, Integer maxAmountOfPeople, String descriptionOfActivity, String pictureOfActivity, Integer priceOfActivity, String minAge, String minHeight, String restrictionsOfActivity) {
+    public Activity(String typeOfActivity, long durationOfActivity, long maintenanceOfActivity, long maxAmountOfPeople, String descriptionOfActivity, String pictureOfActivity, long priceOfActivity, String minAge, String minHeight, String restrictionsOfActivity) {
         this.typeOfActivity = typeOfActivity;
         this.durationOfActivity = durationOfActivity;
         this.maintenanceOfActivity = maintenanceOfActivity;
