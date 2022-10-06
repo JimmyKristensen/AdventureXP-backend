@@ -4,4 +4,5 @@ import com.example.backend.TimeTableSlot.Model.TimeTableSlot;
 import org.springframework.data.repository.CrudRepository;
 
 public interface TimeTableSlotRepository extends CrudRepository<TimeTableSlot, Long> {
+
 }
