@@ -1,5 +1,6 @@
 package com.example.backend.Reservation.Model;
 
+import com.example.backend.Customer.Model.Customer;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -25,10 +26,14 @@ public class Reservation {
     @Column(name="Amount_Of_People")
     private long amountOfPeople;
 
-    public Reservation(long customerId, long timeTableSlotID, long amountOfPeople) {
-        this.customerId = customerId;
+    @OneToOne
+    Customer customer;
+
+    public Reservation(long customerId, long timeTableSlotID, long amountOfPeople,Customer customer) {
+        this.customerId = customer.getCustomerId();
         this.timeTableSlotID = timeTableSlotID;
         this.amountOfPeople = amountOfPeople;
+        this.customer = customer;
     }
 
     @Override

@@ -1,6 +1,7 @@
 package com.example.backend.Customer.Model;
 
 
+import com.example.backend.Reservation.Model.Reservation;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
