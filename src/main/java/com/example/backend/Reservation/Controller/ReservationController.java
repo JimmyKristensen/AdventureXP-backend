@@ -2,6 +2,7 @@ package com.example.backend.Reservation.Controller;
 
 import com.example.backend.Reservation.Model.Reservation;
 import com.example.backend.Reservation.Service.ReservationService;
+import com.example.backend.TimeTableSlot.Model.TimeTableSlot;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -17,6 +18,7 @@ import java.util.Optional;
 public class ReservationController {
 
     private final ReservationService service;
+    private TimeTableSlot table;
 
     @GetMapping()
     public Iterable<Reservation> callApi(){

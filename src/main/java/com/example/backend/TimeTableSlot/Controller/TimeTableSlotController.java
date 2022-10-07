@@ -34,9 +34,10 @@ public class TimeTableSlotController {
         return ResponseEntity.ok().body(timeTableSlot.get());
     }
 
-    @PostMapping
+    @PostMapping()
     public ResponseEntity<TimeTableSlot> create(@RequestBody TimeTableSlot timeTableSlot) {
         TimeTableSlot item = service.create(timeTableSlot);
+
         return ResponseEntity.ok().body(item);
     }
 

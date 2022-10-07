@@ -1,10 +1,12 @@
 package com.example.backend.Reservation.Model;
 
 import com.example.backend.Customer.Model.Customer;
+import com.example.backend.TimeTableSlot.Model.TimeTableSlot;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import javax.persistence.*;
+import java.util.List;
 
 //Nicolas
 @Getter
@@ -17,11 +19,6 @@ public class Reservation {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long reservationId;
 
-    @Column(name="Customer_Id")
-    private long customerId;
-
-    @Column(name="TimeTableSlot_ID")
-    private long timeTableSlotID;
 
     @Column(name="Amount_Of_People")
     private long amountOfPeople;
@@ -29,20 +26,22 @@ public class Reservation {
     @OneToOne
     Customer customer;
 
-    public Reservation(long customerId, long timeTableSlotID, long amountOfPeople,Customer customer) {
-        this.customerId = customer.getCustomerId();
-        this.timeTableSlotID = timeTableSlotID;
+    @OneToOne
+    TimeTableSlot timeTableSlot;
+
+    public Reservation(long amountOfPeople,Customer customer, TimeTableSlot time) {
         this.amountOfPeople = amountOfPeople;
         this.customer = customer;
+        this.timeTableSlot = time;
+        time.setIsReserved(true);
     }
 
     @Override
     public String toString() {
         return "Reservation{" +
                 "reservationId=" + reservationId +
-                ", customerId=" + customerId +
-                ", timeTableSlotID=" + timeTableSlotID +
                 ", amountOfPeople=" + amountOfPeople +
+                ", customer=" + customer +
                 '}';
     }
 }

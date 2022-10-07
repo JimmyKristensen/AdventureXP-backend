@@ -9,13 +9,14 @@ import com.example.backend.Employee.Repository.EmployeeRepository;
 import com.example.backend.Reservation.Model.Reservation;
 import com.example.backend.Reservation.Repository.ReservationRepository;
 import com.example.backend.TimeTableSlot.Model.TimeTableSlot;
+import com.example.backend.TimeTableSlot.Repository.TimeTableSlotRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
-import java.sql.Time;
-import java.util.ArrayList;
+
+import java.util.*;
 import java.util.List;
 
 @SpringBootApplication
@@ -29,7 +30,8 @@ public class BackendApplication {
     public CommandLineRunner importData(CustomerRepository customerRepository,
                                         ActivityRepository activityRepository,
                                         ReservationRepository reservationRepository,
-                                        EmployeeRepository employeeRepository
+                                        EmployeeRepository employeeRepository,
+                                        TimeTableSlotRepository timeTableSlotRepository
 
     ){
         return (args) ->{
@@ -37,19 +39,25 @@ public class BackendApplication {
 
             final List<Customer> customers = new ArrayList<>();
             customers.add(new Customer("Nicolas",53341573,"nicolas.mousten@gmail.com"));
+            customers.add(new Customer("Jimmy",72838295,"jimmysupercool@ukmail.com"));
             customerRepository.saveAll(customers);
 
             final List<Activity> activities = new ArrayList<>();
             activities.add(new Activity("Go Cart",25,5,6,"BLABLABLA","PathToPic",499, "11 years", "150cm", "No prior injuries"));
             activityRepository.saveAll(activities);
 
+            final List<TimeTableSlot> timeTableSlots = new ArrayList<>();
+            timeTableSlots.add(new TimeTableSlot("1987-08/01 18:30",activities.get(0)));
+            timeTableSlotRepository.saveAll(timeTableSlots);
+
             final List<Reservation> reservations = new ArrayList<>();
-            reservations.add(new Reservation(5,1,6,customers.get(0)));
+            reservations.add(new Reservation(8,customers.get(0),timeTableSlots.get(0)));
             reservationRepository.saveAll(reservations);
 
             final List<Employee> employee = new ArrayList<>();
             employee.add(new Employee("admin","funnyPass123"));
             employeeRepository.saveAll(employee);
+
 
         };
     }

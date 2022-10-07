@@ -6,6 +6,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import javax.persistence.*;
+import java.util.List;
 
 //Nicolas
 @Getter
@@ -26,6 +27,7 @@ public class Customer {
 
     @Column(name="Email")
     private String email;
+
 
     public Customer(String name, long tlf, String email) {
         this.name = name;

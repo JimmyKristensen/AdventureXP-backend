@@ -1,9 +1,13 @@
 package com.example.backend.TimeTableSlot.Model;
 
+import com.example.backend.Acticity.Model.Activity;
+import com.example.backend.Reservation.Model.Reservation;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import javax.persistence.*;
+import java.util.List;
 
 @Getter
 @Setter
@@ -18,19 +22,17 @@ public class TimeTableSlot{
     @Column(name="Date")
     private String dateOfTimeTableSlot;
 
-    @Column(name="Time")
-    private String timeOfTimeTableSlot;
-
     @Column(name="IsReserved")
-    private Boolean isReserved = false;
+    private Boolean isReserved;
 
-    @Column(name="Activity_ID")
-    private long activityId;
 
-    public TimeTableSlot(String dateOfTimeTableSlot, String timeOfTimeTableSlot, long activityId) {
+    @OneToOne
+    Activity activity;
+
+    public TimeTableSlot(String dateOfTimeTableSlot, Activity activity) {
         this.dateOfTimeTableSlot = dateOfTimeTableSlot;
-        this.timeOfTimeTableSlot = timeOfTimeTableSlot;
-        this.activityId = activityId;
+        this.activity = activity;
+
     }
 
     @Override
@@ -38,9 +40,8 @@ public class TimeTableSlot{
         return "TimeTableSlot{" +
                 "timeTableSlotId=" + timeTableSlotId +
                 ", dateOfTimeTableSlot='" + dateOfTimeTableSlot + '\'' +
-                ", timeOfTimeTableSlot='" + timeOfTimeTableSlot + '\'' +
                 ", isReserved=" + isReserved +
-                ", activityId=" + activityId +
+                ", activity=" + activity +
                 '}';
     }
 }
