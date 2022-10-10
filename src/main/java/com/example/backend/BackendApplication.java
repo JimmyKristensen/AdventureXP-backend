@@ -48,10 +48,12 @@ public class BackendApplication {
 
             final List<TimeTableSlot> timeTableSlots = new ArrayList<>();
             timeTableSlots.add(new TimeTableSlot("1987-08/01 18:30",activities.get(0)));
+            timeTableSlots.add(new TimeTableSlot("1987-09/02 18:30",activities.get(0)));
             timeTableSlotRepository.saveAll(timeTableSlots);
 
             final List<Reservation> reservations = new ArrayList<>();
-            reservations.add(new Reservation(8,customers.get(0),timeTableSlots.get(0)));
+            reservations.add(new Reservation(8,timeTableSlots.get(0), customers.get(0)));
+            reservations.add(new Reservation(2,timeTableSlots.get(1), customers.get(1)));
             reservationRepository.saveAll(reservations);
 
             final List<Employee> employee = new ArrayList<>();

@@ -2,6 +2,7 @@ package com.example.backend.Reservation.Model;
 
 import com.example.backend.Customer.Model.Customer;
 import com.example.backend.TimeTableSlot.Model.TimeTableSlot;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -23,17 +24,20 @@ public class Reservation {
     @Column(name="Amount_Of_People")
     private long amountOfPeople;
 
-    @OneToOne
-    Customer customer;
+    /* Jimmy */
+    /* Many to one customer */
+    @JsonManagedReference
+    @ManyToOne
+    @JoinColumn(name = "customerId", nullable = false)
+    private Customer customer;
 
     @OneToOne
     TimeTableSlot timeTableSlot;
 
-    public Reservation(long amountOfPeople,Customer customer, TimeTableSlot time) {
+    public Reservation(long amountOfPeople, TimeTableSlot timeTableSlot, Customer customer) {
         this.amountOfPeople = amountOfPeople;
+        this.timeTableSlot = timeTableSlot;
         this.customer = customer;
-        this.timeTableSlot = time;
-        time.setIsReserved(true);
     }
 
     @Override
@@ -42,6 +46,7 @@ public class Reservation {
                 "reservationId=" + reservationId +
                 ", amountOfPeople=" + amountOfPeople +
                 ", customer=" + customer +
+                ", timeTableSlot=" + timeTableSlot +
                 '}';
     }
 }

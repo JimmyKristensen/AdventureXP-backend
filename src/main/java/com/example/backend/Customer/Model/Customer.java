@@ -2,6 +2,8 @@ package com.example.backend.Customer.Model;
 
 
 import com.example.backend.Reservation.Model.Reservation;
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -28,6 +30,11 @@ public class Customer {
     @Column(name="Email")
     private String email;
 
+    /* Jimmy */
+    /* One to Many */
+    @JsonBackReference
+    @OneToMany(mappedBy = "customer")
+    private List<Reservation> reservations;
 
     public Customer(String name, long tlf, String email) {
         this.name = name;
