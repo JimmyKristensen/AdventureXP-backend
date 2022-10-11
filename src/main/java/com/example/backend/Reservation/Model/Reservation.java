@@ -11,7 +11,6 @@ import java.util.List;
 
 //Nicolas
 @Getter
-@Setter
 @NoArgsConstructor
 @Entity
 @Table(name="Reservations")
@@ -26,7 +25,7 @@ public class Reservation {
 
     /* Jimmy */
     /* Many to one customer */
-    @JsonManagedReference
+
     @ManyToOne
     @JoinColumn(name = "customerId", nullable = false)
     private Customer customer;
