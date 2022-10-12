@@ -26,7 +26,7 @@ public class TimeTableSlot{
     private Boolean isReserved;
 
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.DETACH)
     Activity activity;
 
     public TimeTableSlot(String dateOfTimeTableSlot, Activity activity) {
