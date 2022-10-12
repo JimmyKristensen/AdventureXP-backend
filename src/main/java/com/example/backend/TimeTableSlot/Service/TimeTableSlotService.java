@@ -1,10 +1,12 @@
 package com.example.backend.TimeTableSlot.Service;
 
 import com.example.backend.Reservation.Model.Reservation;
+import com.example.backend.Reservation.Service.ReservationValidator;
 import com.example.backend.TimeTableSlot.Model.TimeTableSlot;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.util.Optional;
 
 /**
@@ -26,8 +28,11 @@ public class TimeTableSlotService {
     public Optional<TimeTableSlot> find(Long id){
         return repository.findById(id);
     }
-
+//samuel
     public TimeTableSlot create(TimeTableSlot timeTableSlot){
+        ReservationValidator validator = new ReservationValidator();
+        String convertedDate = validator.convertFromStrToDate(timeTableSlot.getDateOfTimeTableSlot()).toString();
+        timeTableSlot.setDateOfTimeTableSlot(convertedDate);
         return repository.save(timeTableSlot);
     }
 
