@@ -27,16 +27,14 @@ public class TimeTableSlotService {
     public Optional<TimeTableSlot> find(Long id){
         return repository.findById(id);
     }
-    /*
+
 //samuel
     public TimeTableSlot create(TimeTableSlot timeTableSlot){
-        ReservationValidator validator = new ReservationValidator();
-        String convertedDate = validator.convertFromStrToDate(timeTableSlot.getDateOfTimeTableSlot()).toString();
-        timeTableSlot.setDateOfTimeTableSlot(convertedDate);
+        //ReservationValidator validator = new ReservationValidator();
+        //String convertedDate = validator.convertFromStrToDate(timeTableSlot.getDateOfTimeTableSlot()).toString();
+        //timeTableSlot.setDateOfTimeTableSlot(convertedDate);
         return repository.save(timeTableSlot);
     }
-
-     */
 
     public TimeTableSlot update(Long id, TimeTableSlot timeTableSlot){
         return repository.save(timeTableSlot);
