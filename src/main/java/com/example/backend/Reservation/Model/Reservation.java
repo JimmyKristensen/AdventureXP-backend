@@ -7,7 +7,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import javax.persistence.*;
-import java.util.List;
+
 
 //Nicolas
 @Getter
@@ -26,8 +26,8 @@ public class Reservation {
     /* Jimmy */
     /* Many to one customer */
 
-    @ManyToOne
-    @JoinColumn(name = "customerId", nullable = false)
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "customerId",nullable = false)
     private Customer customer;
 
     @OneToOne
