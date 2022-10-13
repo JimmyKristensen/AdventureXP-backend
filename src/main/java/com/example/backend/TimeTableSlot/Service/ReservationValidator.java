@@ -1,4 +1,6 @@
+/*
 package com.example.backend.TimeTableSlot.Service;
+
 
 import org.springframework.stereotype.Service;
 
@@ -32,3 +34,5 @@ public class ReservationValidator {
         return date;
     }
 }
+ */
+

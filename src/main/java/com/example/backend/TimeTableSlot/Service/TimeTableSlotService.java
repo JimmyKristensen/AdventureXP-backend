@@ -1,7 +1,6 @@
 package com.example.backend.TimeTableSlot.Service;
 
 import com.example.backend.Reservation.Model.Reservation;
-import com.example.backend.Reservation.Service.ReservationValidator;
 import com.example.backend.TimeTableSlot.Model.TimeTableSlot;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Service;
@@ -28,6 +27,7 @@ public class TimeTableSlotService {
     public Optional<TimeTableSlot> find(Long id){
         return repository.findById(id);
     }
+    /*
 //samuel
     public TimeTableSlot create(TimeTableSlot timeTableSlot){
         ReservationValidator validator = new ReservationValidator();
@@ -35,6 +35,8 @@ public class TimeTableSlotService {
         timeTableSlot.setDateOfTimeTableSlot(convertedDate);
         return repository.save(timeTableSlot);
     }
+
+     */
 
     public TimeTableSlot update(Long id, TimeTableSlot timeTableSlot){
         return repository.save(timeTableSlot);
