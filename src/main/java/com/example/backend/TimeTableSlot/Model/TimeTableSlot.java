@@ -32,6 +32,8 @@ public class TimeTableSlot{
     public TimeTableSlot(String dateOfTimeTableSlot, Activity activity) {
         this.dateOfTimeTableSlot = dateOfTimeTableSlot;
         this.activity = activity;
+        //this.isReserved = true; //hans 0710 2022 tilføjet for at se om det fikser problem m. timeslots uden isReserved
+        //det gør det .. men så bliver ALLE timeslots vi laver, true -- også dem uden en kunde.
 
     }
 
