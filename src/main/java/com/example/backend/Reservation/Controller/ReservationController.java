@@ -18,7 +18,7 @@ import java.util.Optional;
 public class ReservationController {
 
     private final ReservationService service;
-    private TimeTableSlot table;
+
 
     @GetMapping()
     public Iterable<Reservation> callApi(){
