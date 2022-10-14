@@ -25,7 +25,7 @@ public class BackendApplication {
     public static void main(String[] args) {
         SpringApplication.run(BackendApplication.class, args);
     }
-
+    /*
     @Bean
     public CommandLineRunner importData(CustomerRepository customerRepository,
                                         ActivityRepository activityRepository,
@@ -36,19 +36,21 @@ public class BackendApplication {
     ){
         return (args) ->{
 
-
             final List<Customer> customers = new ArrayList<>();
             customers.add(new Customer("Nicolas",53341573,"nicolas.mousten@gmail.com"));
             customers.add(new Customer("Jimmy",72838295,"jimmysupercool@ukmail.com"));
+            customers.add(new Customer("Hans",11223344,"hans@ukmail.com"));
             customerRepository.saveAll(customers);
 
             final List<Activity> activities = new ArrayList<>();
             activities.add(new Activity("Go Cart",25,5,6,"BLABLABLA","PathToPic",499, "11 years", "150cm", "No prior injuries"));
+            activities.add(new Activity("Go Cart electric boogaloo",25,5,6,"BLABLABLA","PathToPic",499, "11 years", "150cm", "No prior injuries"));
             activityRepository.saveAll(activities);
 
             final List<TimeTableSlot> timeTableSlots = new ArrayList<>();
             timeTableSlots.add(new TimeTableSlot("1987-08/01 18:30",activities.get(0)));
             timeTableSlots.add(new TimeTableSlot("1987-09/02 18:30",activities.get(0)));
+            timeTableSlots.add(new TimeTableSlot("1987-08/03 18:30",activities.get(0)));
             timeTableSlotRepository.saveAll(timeTableSlots);
 
             final List<Reservation> reservations = new ArrayList<>();
@@ -63,4 +65,6 @@ public class BackendApplication {
 
         };
     }
+
+     */
 }

@@ -79,4 +79,9 @@ public class Activity {
                 ", restrictionsOfActivity='" + restrictionsOfActivity + '\'' +
                 '}';
     }
+
+    public long getTotalTimeOfActivity() { //1310 2022 hans: added so we can use the total time of the activity for date validation
+        //purposes.
+        return this.durationOfActivity + this.maintenanceOfActivity;
+    }
 }
