@@ -58,6 +58,7 @@ public class TimeTableSlotService {
     //so we can validate that it doesnt conflict with existing reservations. right now it just sorts a list of the
     //reservations with the same day as the TTS you give it. it SHOULD compare the time of the new TTS to the time of
     // the old reservations, so they dont conflict.
+
     public boolean reservationTimeSlotValidationForAvailability(TimeTableSlot tts){
         System.out.println("start of rservations");
         //1310 2022 hans: jeg skal bruge hele listen over vores reservationer

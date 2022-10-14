@@ -22,8 +22,6 @@ public class TimeTableSlot{
     @Column(name="Date")
     private String dateOfTimeTableSlot;
 
-    @Column(name="IsReserved")
-    private Boolean isReserved;
 
 
     @OneToOne(cascade = CascadeType.DETACH)
@@ -42,7 +40,6 @@ public class TimeTableSlot{
         return "TimeTableSlot{" +
                 "timeTableSlotId=" + timeTableSlotId +
                 ", dateOfTimeTableSlot='" + dateOfTimeTableSlot + '\'' +
-                ", isReserved=" + isReserved +
                 ", activity=" + activity +
                 '}';
     }
