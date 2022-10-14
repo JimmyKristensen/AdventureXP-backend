@@ -51,7 +51,7 @@ public class ReservationController {
         return ResponseEntity.ok().body(service.update(id, reservation));
     }
 
-    @DeleteMapping("/delete/{id}")
+    @DeleteMapping("/{id}")
     public ResponseEntity<Reservation> delete(@PathVariable("id") Long id) {
         service.find(id).orElseThrow(() -> new RuntimeException("Reservation not found.".formatted(id)));
 
